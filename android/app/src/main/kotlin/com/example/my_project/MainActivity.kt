@@ -1,4 +1,4 @@
-package com.mycompany.practica1interfacesnaturalesweb
+package com.mycompany.practica1interfacesnaturalesmovil
 
 import io.flutter.embedding.android.FlutterActivity
 

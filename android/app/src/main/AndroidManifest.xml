@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mycompany.practica1interfacesnaturalesweb"
+    package="com.mycompany.practica1interfacesnaturalesmovil"
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET"/>
 
 
     <application
-        android:label="Practica1InterfacesNaturalesWeb"
+        android:label="Practica1InterfacesNaturalesMovil"
         tools:replace="android:label"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">
@@ -45,7 +45,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="practica1interfacesnaturalesweb" android:host="practica1interfacesnaturalesweb.com" />
+                <data android:scheme="practica1interfacesnaturalesmovil" android:host="practica1interfacesnaturalesmovil.com" />
             </intent-filter>
 
         </activity>

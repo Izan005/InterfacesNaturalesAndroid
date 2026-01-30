@@ -7,7 +7,7 @@
 
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:practica1_interfaces_naturales_web/main.dart';
+import 'package:practica1_interfaces_naturales_movil/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
