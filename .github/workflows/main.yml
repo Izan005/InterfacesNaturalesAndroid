@@ -37,7 +37,7 @@ jobs:
 
     - name: Deploy APK to releases repo
       run: |
-        git clone https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/Izan005/InterfacesNaturalesAndroid mobile-repo
+        git clone https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/Izan005/InterfacesNaturalesAPKAndroid mobile-repo
         rm -rf mobile-repo/*
         cp out/app-release.apk mobile-repo/app-release-latest.apk
         cd mobile-repo
