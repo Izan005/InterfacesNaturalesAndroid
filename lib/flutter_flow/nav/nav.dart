@@ -34,17 +34,115 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => HomePageWidget(),
+      errorBuilder: (context, state) => LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => HomePageWidget(),
+          builder: (context, _) => LoginWidget(),
         ),
         FFRoute(
-          name: HomePageWidget.routeName,
-          path: HomePageWidget.routePath,
-          builder: (context, params) => HomePageWidget(),
+          name: HomeProfesorWidget.routeName,
+          path: HomeProfesorWidget.routePath,
+          builder: (context, params) => HomeProfesorWidget(
+            profesorRegistrado: params.getParam(
+              'profesorRegistrado',
+              ParamType.JSON,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: LoginWidget.routeName,
+          path: LoginWidget.routePath,
+          builder: (context, params) => LoginWidget(),
+        ),
+        FFRoute(
+          name: HomeAlumnoWidget.routeName,
+          path: HomeAlumnoWidget.routePath,
+          builder: (context, params) => HomeAlumnoWidget(
+            alumnoRegistrado: params.getParam(
+              'alumnoRegistrado',
+              ParamType.JSON,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: AsignaturasCarreraWidget.routeName,
+          path: AsignaturasCarreraWidget.routePath,
+          builder: (context, params) => AsignaturasCarreraWidget(
+            alumno: params.getParam(
+              'alumno',
+              ParamType.JSON,
+            ),
+            carrera: params.getParam(
+              'carrera',
+              ParamType.JSON,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: InfoCarreraAlumnoWidget.routeName,
+          path: InfoCarreraAlumnoWidget.routePath,
+          builder: (context, params) => InfoCarreraAlumnoWidget(
+            alumno: params.getParam(
+              'alumno',
+              ParamType.JSON,
+            ),
+            carrera: params.getParam(
+              'carrera',
+              ParamType.JSON,
+            ),
+            anio: params.getParam(
+              'anio',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: DetallesAsignaturaWidget.routeName,
+          path: DetallesAsignaturaWidget.routePath,
+          builder: (context, params) => DetallesAsignaturaWidget(
+            alumno: params.getParam(
+              'alumno',
+              ParamType.JSON,
+            ),
+            asignatura: params.getParam(
+              'asignatura',
+              ParamType.JSON,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: ListaEstudiantesAsignaturaWidget.routeName,
+          path: ListaEstudiantesAsignaturaWidget.routePath,
+          builder: (context, params) => ListaEstudiantesAsignaturaWidget(
+            asignatura: params.getParam(
+              'asignatura',
+              ParamType.JSON,
+            ),
+            profesor: params.getParam(
+              'profesor',
+              ParamType.JSON,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: DetallesAlumnoProfesorWidget.routeName,
+          path: DetallesAlumnoProfesorWidget.routePath,
+          builder: (context, params) => DetallesAlumnoProfesorWidget(
+            alumno: params.getParam(
+              'alumno',
+              ParamType.JSON,
+            ),
+            asignatura: params.getParam(
+              'asignatura',
+              ParamType.JSON,
+            ),
+            profesor: params.getParam(
+              'profesor',
+              ParamType.JSON,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
